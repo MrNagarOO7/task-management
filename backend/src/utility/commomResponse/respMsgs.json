@@ -1,0 +1,19 @@
+{
+    "ADD_TASK": "Added task successfully",
+    "DELETE_TASK": "Task deleted successfully",
+    "GET_TASK": "Fetched Task successfully",
+    "FAILED": "Operation failed. Please, Try again.",
+    "INTERNAL_SERVER": "Internal Server Error!",
+    "LIST_TASK": "Task listed succesfully.",
+    "NO_ACCESS": "User don't have access to the task",
+    "NO_TASK": "No Task found!",
+    "NO_ROUTE": "No route found!",
+    "NO_USER": "No user found! Please, Check user email.",
+    "PASSWORD_INCORRECT": "Provided Password is incorrect.",
+    "SIGN_IN": "User Signin successfully.",
+    "SIGN_UP": "User Signup successfully.",
+    "SUCCESS": "Operation performed successfully!",
+    "TASK_LIST": "Fetched task list successfully.",
+    "USER_EXIST": "User Email already exist.",
+    "UPDATE_TASK": "Task updated sucessfully."
+}
