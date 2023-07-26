@@ -1,0 +1,25 @@
+.task-list {
+    
+    .filters {
+        display: flex;
+        justify-content: end;
+       
+        .responsive-btn {
+            margin-right: 10px;
+        }
+    }
+    .ant-pagination {
+        right: 18px;
+        position: absolute;
+        margin-top: 5px;
+        padding-bottom: 5px;
+    }
+    .ant-space-item {
+        .ant-btn {
+            color: #9ef01a;
+        }
+        .delete-btn {
+            color: red;
+        }
+    }
+}

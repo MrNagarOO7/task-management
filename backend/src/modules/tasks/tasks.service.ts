@@ -23,7 +23,9 @@ export class TasksService {
         if (!existTask) checkIdExist = false;
       }
       createTaskDto.taskId = taskId;
-      createTaskDto.status = 'todo';
+      createTaskDto.status = createTaskDto?.status
+        ? createTaskDto?.status
+        : 'todo';
       const respData = (
         await new this.taskModel(createTaskDto).save()
       ).toObject();
@@ -43,6 +45,7 @@ export class TasksService {
       const filterCondition = {};
       if (status !== 'all') filterCondition['status'] = status;
       if (taskFilter === 'my') filterCondition['userId'] = filterTaskDto.userId;
+
       const filteredData = await this.taskModel.aggregate([
         {
           $match: filterCondition,
@@ -52,18 +55,17 @@ export class TasksService {
             taskId: 1,
             title: 1,
             status: 1,
+            userId: 1,
             createdAt: 1,
             updatedAt: 1,
           },
         },
+        { $sort: { createdAt: -1 } },
         {
           $skip: skipTotal,
         },
         {
           $limit: +counts,
-        },
-        {
-          $sort: { createdAt: -1 },
         },
       ]);
       const total = await this.taskModel.count(filterCondition);

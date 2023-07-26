@@ -32,6 +32,7 @@ export class UsersService {
       const respData = (
         await new this.userModel(createUserDto).save()
       ).toObject();
+      delete respData.password;
       return CommonResponse.getSuccessResponse(respData, 'SIGN_UP', 201);
     } catch (error) {
       return CommonResponse.getFailedResponse(null, null, error);
@@ -57,7 +58,13 @@ export class UsersService {
     if (!validPassword)
       return CommonResponse.getFailedResponse('PASSWORD_INCORRECT');
     return CommonResponse.getSuccessResponse(
-      { ...userExist, accessToken },
+      {
+        email: userExist.email,
+        userId: userExist.userId,
+        accessToken,
+        fname: userExist.fname,
+        lname: userExist.lname,
+      },
       'SIGN_IN',
       201,
     );
