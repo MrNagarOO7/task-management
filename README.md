@@ -22,6 +22,14 @@ The Task Management Application is designed to help users organize and manage th
 - Authentication: JWT (JSON Web Tokens) for securing user authentication.
 - Express.js: A web application framework used in conjunction with Nest.js for handling HTTP requests.
 
+## Frontend Technology Stack
+
+- React.js: A JavaScript library for building user interfaces.
+- Redux: A state management library used to manage application state and data flow.
+- Redux Thunk: A middleware for Redux that allows handling asynchronous actions.
+- Axios: A popular HTTP client library used for making API requests to the backend server.
+- Ant Design: A UI library for React that provides a set of pre-designed components and styles for building modern and responsive user interfaces.
+
 ## Getting Started
 
 To set up the Task Management Application locally, follow these steps:
@@ -43,6 +51,21 @@ npm run start:dev
 ```
 
 7. The backend server should now be up and running at http://localhost:3001.
+8. Navigate to the frontend directory in the cloned repository.
+9. Run the following command to install dependencies:
+
+```bash
+npm install
+```
+
+10. Configure the environment variables required for the frontend, such as the backend API URL.
+11. Start the frontend development server using the following command:
+
+```bash
+npm start
+```
+
+12. The frontend development server should now be up and running at http://localhost:3000.
 
 ## API Documentation
 
